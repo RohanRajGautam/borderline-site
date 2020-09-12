@@ -1,13 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/Layout"
 
-export default () => {
+const Tours = () => {
   return (
     <Layout>
-      <h1>Hello world!</h1>
-      <Link to="/tours/">Go to tours</Link>
+      <h2>tours page</h2>
+      <Link to="/">Back to home</Link>
     </Layout>
   )
 }
+
+export default Tours
