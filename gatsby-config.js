@@ -1,10 +1,8 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: "BorderLine",
+    description:
+      "Visit our page to explore awesome places and discover what makes each of them unique. Get out of your comfort zone and say yes to adventure.",
+  },
   plugins: [`gatsby-plugin-styled-components`],
 }
