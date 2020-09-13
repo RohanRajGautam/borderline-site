@@ -1,27 +1,26 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import { siteMetadata } from "../../gatsby-config"
 
-const Blog = () => {
-  const {
-    site: { siteMetadata },
-  } = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-          description
-        }
-      }
-    }
-  `)
-
+const Blog = ({ data }) => {
   return (
     <Layout>
-      <h4>title: {siteMetadata.title} </h4>
-      <p>description: {siteMetadata.description} </p>
+      <h4>title: {data.site.siteMetadata.title}</h4>
+      <p>description: {data.site.siteMetadata.description} </p>
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`
 
 export default Blog
