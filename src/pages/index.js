@@ -4,6 +4,7 @@ import Banner from "../components/Banner"
 
 import Layout from "../components/Layout"
 import SimpleHero from "../components/SimpleHero"
+import About from "../components/Home/About"
 
 export default () => {
   return (
@@ -18,6 +19,7 @@ export default () => {
           </Link>
         </Banner>
       </SimpleHero>
+      <About />
     </Layout>
   )
 }
