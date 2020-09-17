@@ -6,7 +6,6 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Tour from "../Tours/Tour"
 
 const getTours = graphql`
-  # Write your query or mutation here
   query {
     featuredTours: allContentfulTour(filter: { featured: { eq: true } }) {
       edges {
