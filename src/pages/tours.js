@@ -11,7 +11,6 @@ const Tours = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={imageData} />
-      <Link to="/">Back to home</Link>
       <ToursComponent />
     </Layout>
   )
