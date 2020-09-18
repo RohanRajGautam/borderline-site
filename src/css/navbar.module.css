@@ -1,9 +1,11 @@
-
 .nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.25rem;
+}
+.nav-logo {
+  cursor: pointer;
 }
 .logo-btn {
   background: transparent;
