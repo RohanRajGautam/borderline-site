@@ -5,9 +5,6 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Tour from "../Tours/Tour"
 
 const FeaturedTour = ({ tours }) => {
-  const response = useStaticQuery(getTours)
-  const tours = response.featuredTours.edges
-
   return (
     <section className={styles.tours}>
       <Title title="Featured" subtitle="Tours" />

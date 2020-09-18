@@ -4,11 +4,11 @@ import styles from "../../css/contact.module.css"
 
 const Contact = () => {
   return (
-    <section>
+    <section className={styles.contact}>
       <Title title="contact" subtitle="us" />
       <div className={styles.center}>
         <form
-          action="https://formspree.io/borderline@gmail.com"
+          action="https://formspree.io/subbagautam2@gmail.com"
           method="POST"
           className={styles.form}
         >

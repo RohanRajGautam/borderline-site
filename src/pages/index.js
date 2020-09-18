@@ -1,6 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Banner from "../components/Banner"
 import Layout from "../components/Layout"
@@ -10,6 +10,7 @@ import StyledHero from "../components/StyledHero"
 import FeaturedTour from "../components/Home/FeaturedTour"
 
 export default ({ data }) => {
+  const tours = data.tours.edges
   const imageData = data.defaultBcg.childImageSharp.fluid
   return (
     <Layout>
@@ -18,24 +19,41 @@ export default ({ data }) => {
           title="Continue exploring"
           info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae non modi cumque alias incidunt repellat, consequuntur iusto quas numquam ad!"
         >
-          <Link to="/tours" className="btn-white">
+          <AniLink fade to="/tours" className="btn-white">
             explore tours
-          </Link>
+          </AniLink>
         </Banner>
       </StyledHero>
       <About />
       <Services />
-      <FeaturedTour />
+      <FeaturedTour tours={tours} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query {
+  {
     defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 4160) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    tours: allContentfulTour(filter: { featured: { eq: true } }) {
+      edges {
+        node {
+          name
+          price
+          slug
+          country
+          contentful_id
+          days
+          images {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }
