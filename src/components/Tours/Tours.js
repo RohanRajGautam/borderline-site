@@ -21,7 +21,7 @@ const getTours = graphql`
           country
           images {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
